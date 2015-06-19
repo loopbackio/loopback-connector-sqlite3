@@ -1,15 +1,10 @@
 {
   "content": [
     {
-      "title": "LoopBack PostgreSQL Connector",
+      "title": "LoopBack SQLite3 Connector",
       "depth": 2
     },
-    "lib/postgresql.js",
-    {
-      "title": "Discovery API",
-      "depth": 2
-    },
-    "lib/discovery.js"
+    "lib/sqlite3.js",
   ],
   "codeSectionDepth": 3
 }
