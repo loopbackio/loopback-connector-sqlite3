@@ -1,7 +1,7 @@
 Copyright (c) 2013-2014 StrongLoop, Inc.
 
-loopback-connector-postgresql uses a 'dual license' model. Users may use
-loopback-connector-postgresql under the terms of the Artistic 2.0 license, or
+loopback-connector-sqlite3 uses a 'dual license' model. Users may use
+loopback-connector-sqlite3 under the terms of the Artistic 2.0 license, or
 under the StrongLoop License. The text of both is included below.
 
 Artistic License 2.0

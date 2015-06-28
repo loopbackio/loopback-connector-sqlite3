@@ -1,10 +1,9 @@
-﻿set search_path to "strongloop",public;
-drop table if exists "customer" cascade;
-drop table if exists "session" cascade;
-drop table if exists "location" cascade;
-drop table if exists "product" cascade;
-drop table if exists "inventory" cascade;
-drop table if exists "reservation" cascade;
+﻿drop table if exists "customer";
+drop table if exists "session";
+drop table if exists "location";
+drop table if exists "product";
+drop table if exists "inventory";
+drop table if exists "reservation";
 
   create table "customer"
    (	"id" varchar(64),

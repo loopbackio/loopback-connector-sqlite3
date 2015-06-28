@@ -1,7 +1,10 @@
-var should = require('should'),
-  assert = require('assert');
-var InvalidDefault, Post, db;
+var assert = require('assert');
+var should = require('should');
+require('./init');
 
+var Post, db;
+
+/*global describe, before, it, getDataSource*/
 describe('database default field values', function() {
   before(function() {
     db = getDataSource();
@@ -9,14 +12,14 @@ describe('database default field values', function() {
     Post = db.define('PostWithDbDefaultValue', {
       created: {
         type: 'Date',
-        postgresql: {
-          dbDefault: "now()"
+        sqlite3: {
+          dbDefault: 'now'
         }
       },
       defaultInt: {
         type: 'Number',
-        postgresql: {
-          dbDefault: "5"
+        sqlite3: {
+          dbDefault: '5'
         }
       },
       oneMore: {
@@ -24,11 +27,11 @@ describe('database default field values', function() {
       }
     });
 
-    InvalidDefault = db.define('PostWithInvalidDbDefaultValue', {
+    db.define('PostWithInvalidDbDefaultValue', {
       created: {
         type: 'Date',
-        postgresql: {
-          dbDefault: "'5'"
+        sqlite3: {
+          dbDefault: '\'5\''
         }
       }
     });
@@ -47,22 +50,19 @@ describe('database default field values', function() {
     });
   });
 
-  it('should have \'now()\' default value in SQL column definition',
+  it('should have \'now\' default value in SQL column definition',
     function(done) {
-      var query = "select column_name, data_type, character_maximum_length," +
-        " column_default" +
-        " from information_schema.columns" +
-        " where table_name = 'postwithdbdefaultvalue'" +
-        " and column_name='created'";
+      var query = 'PRAGMA table_info(postwithdbdefaultvalue)';
 
-      db.connector.query(query, function(err, results) {
-        assert.equal(results[0].column_default, "now()");
+      db.connector.executeSQL(query, function(err, results) {
+        assert.equal(results[0].dflt_value,
+          'CAST(STRFTIME(\'%s\', \'now\') AS INTEGER)*1000');
         done(err);
       });
     });
 
   it('should create a record with default value', function(done) {
-    Post.create({oneMore: 3}, function(err, p) {
+    Post.create({oneMore: 3}, function(err) {
       should.not.exists(err);
       Post.findOne({where: {defaultInt: 5}}, function(err, p) {
         should.not.exists(err);
@@ -74,7 +74,7 @@ describe('database default field values', function() {
   });
 
   it('should create a record with custom value', function(done) {
-    Post.create({oneMore: 2, defaultInt: 6}, function(err, p) {
+    Post.create({oneMore: 2, defaultInt: 6}, function(err) {
       should.not.exists(err);
       Post.findOne({where: {defaultInt: 6}}, function(err, p) {
         should.not.exists(err);
@@ -84,4 +84,4 @@ describe('database default field values', function() {
       });
     });
   });
-})
+});

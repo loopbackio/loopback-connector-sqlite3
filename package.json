@@ -1,26 +1,32 @@
 {
   "name": "loopback-connector-sqlite3",
-  "version": "1.7.0",
+  "version": "1.0.0",
   "description": "Loopback SQLite3 Connector",
   "keywords": [
     "StrongLoop",
     "LoopBack",
     "SQLite",
+    "SQLite3",
     "DataSource",
     "Connector"
   ],
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec --timeout 10000 --require test/init.js test/*.test.js"
+    "pretest": "eslint ./ && jscs ./",
+    "lint": "eslint ./ && jscs ./",
+    "test": "mocha -R spec -b --timeout 10000 --require test/init.js test/*.test.js"
   },
   "dependencies": {
     "async": "^0.9.0",
     "debug": "^2.1.1",
     "loopback-connector": "1.x",
+    "moment": "^2.10.3",
     "sqlite3": "^3.0.6"
   },
   "devDependencies": {
     "bluebird": "^2.9.12",
+    "eslint": "^0.23.0",
+    "jscs": "^1.13.1",
     "loopback-datasource-juggler": "^2.17.0",
     "mocha": "^2.1.0",
     "rc": "^1.0.0",
@@ -35,6 +41,6 @@
     "url": "https://github.com/strongloop/loopback-connector-sqlite3/blob/master/LICENSE"
   },
   "optionalDependencies": {
-    "sl-blip": "http://blip.strongloop.com/loopback-connector-sqlite3@1.7.0"
+    "sl-blip": "http://blip.strongloop.com/loopback-connector-sqlite3@1.0.0"
   }
 }
