@@ -28,6 +28,7 @@
     "eslint": "^0.23.0",
     "jscs": "^1.13.1",
     "loopback-datasource-juggler": "^2.17.0",
+    "mktmpdir": "^0.1.1",
     "mocha": "^2.1.0",
     "rc": "^1.0.0",
     "should": "^5.0.0"
