@@ -7,22 +7,23 @@ require('./init');
 
 var Schema = require('loopback-datasource-juggler').Schema;
 
-var UserData, db;
+var UserData;
+var db;
 
 /* global describe, before, it, getDataSource */
 /* eslint max-nested-callbacks:0 */
-describe('migrations', function () {
+describe('migrations', function() {
 
   before(setup);
 
-  it('should run migration', function (done) {
-    db.automigrate(function () {
+  it('should run migration', function(done) {
+    db.automigrate(function() {
       done();
     });
   });
 
-  it('UserData should have correct columns', function (done) {
-    getFields('UserData', function (err, fields) {
+  it('UserData should have correct columns', function(done) {
+    getFields('UserData', function(err, fields) {
       should.not.exists(err);
       var expected = {
         bio: {
@@ -81,7 +82,7 @@ describe('migrations', function () {
     });
   });
 
-  it('UserData should have correct indexes', function (done) {
+  it('UserData should have correct indexes', function(done) {
     var expected = [{
       name: 'index0',
       table: 'userdata',
@@ -96,23 +97,23 @@ describe('migrations', function () {
       columns: ['email']
     }];
 
-    getIndexes('UserData', function (err, fields) {
+    getIndexes('UserData', function(err, fields) {
       should.not.exists(err);
       expected.should.be.eql(fields);
       done();
     });
   });
 
-  it('should autoupdate', function (done) {
+  it('should autoupdate', function(done) {
     function userExists(cb) {
-      query('SELECT * FROM UserData', function (err, res) {
+      query('SELECT * FROM UserData', function(err, res) {
         cb(!err && res[0].email === 'test@example.com');
       });
     }
 
-    UserData.create({email: 'test@example.com'}, function (err) {
+    UserData.create({email: 'test@example.com'}, function(err) {
       assert.ok(!err, 'Could not create user: ' + err);
-      userExists(function (yep) {
+      userExists(function(yep) {
         assert.ok(yep, 'User does not exist');
       });
       UserData.defineProperty('email', {type: String});
@@ -126,9 +127,9 @@ describe('migrations', function () {
         unsigned: true,
         dataType: 'bigInt'
       });
-      db.autoupdate(function (err) {
+      db.autoupdate(function(err) {
         assert.ok(!err, 'Should not error');
-        getFields('UserData', function (err, fields) {
+        getFields('UserData', function(err, fields) {
           assert.ok(!err, 'Should not error');
 
           // change nullable for email
@@ -141,7 +142,7 @@ describe('migrations', function () {
             assert.equal(fields.newproperty.type, 'REAL',
               'New column type is not REAL');
           }
-          userExists(function (yep) {
+          userExists(function(yep) {
             assert.ok(yep, 'User does not exist');
             done();
           });
@@ -162,7 +163,7 @@ describe('migrations', function () {
     });
   });
 
-  it('should disconnect when done', function (done) {
+  it('should disconnect when done', function(done) {
     db.disconnect();
     done();
   });
@@ -218,12 +219,12 @@ function query(sql, cb) {
 }
 
 function getFields(model, cb) {
-  query('PRAGMA table_info(' + model.toLowerCase() + ')', function (err, res) {
+  query('PRAGMA table_info(' + model.toLowerCase() + ')', function(err, res) {
     if (err) {
       cb(err);
     } else {
       var fields = {};
-      res.forEach(function (field) {
+      res.forEach(function(field) {
         delete field.cid;
         fields[field.name] = field;
       });
@@ -233,7 +234,7 @@ function getFields(model, cb) {
 }
 
 function getIndexes(model, cb) {
-  query('PRAGMA index_list(' + model.toLowerCase() + ')', function (err, res) {
+  query('PRAGMA index_list(' + model.toLowerCase() + ')', function(err, res) {
     if (err) {
       console.log(err);
       cb(err);
