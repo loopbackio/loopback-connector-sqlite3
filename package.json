@@ -1,6 +1,6 @@
 {
   "name": "loopback-connector-sqlite3",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Loopback SQLite3 Connector",
   "keywords": [
     "StrongLoop",
@@ -42,6 +42,6 @@
     "url": "https://github.com/strongloop/loopback-connector-sqlite3/blob/master/LICENSE"
   },
   "optionalDependencies": {
-    "sl-blip": "http://blip.strongloop.com/loopback-connector-sqlite3@1.0.1"
+    "sl-blip": "http://blip.strongloop.com/loopback-connector-sqlite3@1.0.2"
   }
 }
