@@ -37,8 +37,5 @@
     "type": "git",
     "url": "https://github.com/strongloop/loopback-connector-sqlite3.git"
   },
-  "license": "Artistic-2.0",
-  "optionalDependencies": {
-    "sl-blip": "http://blip.strongloop.com/loopback-connector-sqlite3@1.0.0"
-  }
+  "license": "Artistic-2.0"
 }
