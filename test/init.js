@@ -1,3 +1,8 @@
+// Copyright IBM Corp. 2015. All Rights Reserved.
+// Node module: loopback-connector-sqlite3
+// This file is licensed under the Artistic License 2.0.
+// License text available at https://opensource.org/licenses/Artistic-2.0
+
 var DataSource = require('loopback-datasource-juggler').DataSource;
 var path = require('path');
 var os = require('os');
