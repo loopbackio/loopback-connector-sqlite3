@@ -22,7 +22,7 @@
     "loopback-connector": "2.x",
     "moment": "^2.10.3",
     "sqlite3": "^3.1.0",
-    "strong-globalize": "^2.5.8"
+    "strong-globalize": "^2.6.2"
   },
   "devDependencies": {
     "bluebird": "^2.9.12",
