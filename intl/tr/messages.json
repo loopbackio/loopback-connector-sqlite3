@@ -1,0 +1,9 @@
+{
+  "80a32e80cbed65eba2103201a7c94710": "Model bulunamadı: {0}",
+  "294425a3e64b8afa174c845a84c36565": "Sayısal varsayılan değer geçersiz: {0}",
+  "3511a3c51942168a860e7f14ce273149": "{{SQLITE3}}: Boole varsayılan değeri geçersiz: {0}",
+  "536b28cbb934c78100251d18b1f93c55": "{0} için varsayılan değer desteklenmiyor",
+  "a818f6e257ec3de0ee9d3442ec605369": "{{SQLITE3}}: Sayı geçersiz: {0}",
+  "cf1fe185e5c67a821e191ee5fb5ba421": "Tarih varsayılan değeri geçersiz: {0}"
+}
+

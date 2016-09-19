@@ -1,0 +1,9 @@
+{
+  "80a32e80cbed65eba2103201a7c94710": "Modèle introuvable : {0}",
+  "294425a3e64b8afa174c845a84c36565": "Valeur par défaut numérique non valide : {0}",
+  "3511a3c51942168a860e7f14ce273149": "{{SQLITE3}} : Valeur par défaut booléenne non valide : {0}",
+  "536b28cbb934c78100251d18b1f93c55": "La valeur par défaut pour {0} n'est pas prise en charge",
+  "a818f6e257ec3de0ee9d3442ec605369": "{{SQLITE3}} : Nombre non valide : {0}",
+  "cf1fe185e5c67a821e191ee5fb5ba421": "Valeur par défaut de date non valide : {0}"
+}
+
