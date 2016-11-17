@@ -31,7 +31,7 @@
     "bluebird": "^2.9.12",
     "eslint": "^0.23.0",
     "jscs": "^1.13.1",
-    "loopback-datasource-juggler": "^3.0.0",
+    "loopback-datasource-juggler": "^2.53.0",
     "mktmpdir": "^0.1.1",
     "mocha": "^2.1.0",
     "rc": "^1.0.0",
