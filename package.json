@@ -1,6 +1,9 @@
 {
   "name": "loopback-connector-sqlite3",
   "version": "1.2.0",
+  "publishConfig": {
+    "tag": "lts"
+  },
   "description": "Loopback SQLite3 Connector",
   "keywords": [
     "StrongLoop",
