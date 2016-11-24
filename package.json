@@ -41,5 +41,8 @@
     "type": "git",
     "url": "https://github.com/strongloop/loopback-connector-sqlite3.git"
   },
-  "license": "Artistic-2.0"
+  "license": "Artistic-2.0",
+  "ci": {
+    "testDownstreamDeps": false
+  }
 }
