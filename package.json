@@ -4,7 +4,7 @@
   "description": "Loopback SQLite3 Connector",
   "engines": {
     "node": ">=4"
-  },  
+  },
   "keywords": [
     "StrongLoop",
     "LoopBack",
@@ -41,8 +41,5 @@
     "type": "git",
     "url": "https://github.com/strongloop/loopback-connector-sqlite3.git"
   },
-  "license": "Artistic-2.0",
-  "ci": {
-    "testDownstreamDeps": false
-  }
+  "license": "Artistic-2.0"
 }
