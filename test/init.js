@@ -6,7 +6,7 @@
 var DataSource = require('loopback-datasource-juggler').DataSource;
 var path = require('path');
 var os = require('os');
-
+console.log('tmpdir',os.tmpdir())
 var config = require('rc')('loopback', {
   test: {
     sqlite: {
