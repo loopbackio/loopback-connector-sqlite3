@@ -10,6 +10,7 @@ require('./init');
 var should = require('should');
 
 var Post;
+var ModelWithPKString;
 var db;
 
 /*global describe, before, it, getDataSource*/
@@ -24,11 +25,18 @@ describe('sqlite3 connector', function() {
       loc: 'GeoPoint',
       approved: Boolean
     });
+
+    ModelWithPKString = db.define('ModelWithPKString', {
+      id: {type: String, id: true},
+      content: {type: String},
+    });
   });
 
   it('should run migration', function(done) {
     db.automigrate('PostWithBoolean', function() {
-      done();
+      db.automigrate('ModelWithPKString', function() {
+        done();
+      });
     });
   });
 
@@ -138,6 +146,17 @@ describe('sqlite3 connector', function() {
         should.not.exists(err);
         done();
       });
+    });
+
+  it('should return the id inserted when primary key is a string type',
+    function(done) {
+      ModelWithPKString.create({id: 'PK_ID_TEST', content: 'content_TEST'},
+        function(err, p) {
+          should.not.exists(err);
+          p.should.have.property('id', 'PK_ID_TEST');
+          p.should.have.property('content', 'content_TEST');
+          done();
+        });
     });
 });
 
