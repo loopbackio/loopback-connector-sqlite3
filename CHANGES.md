@@ -1,3 +1,27 @@
+2018-08-27, Version 3.0.0
+=========================
+
+ * upgrade deps (Raymond Feng)
+
+ * Replicate .github from loopback repo (Siddhi Pai)
+
+ * Remove unused CI config (Simon Ho)
+
+ * Add CI config to package.json (Simon Ho)
+
+ * Start 3.x + drop support for Node v0.10/v0.12 (siddhipai)
+
+ * Drop support for Node v0.10 and v0.12 (Siddhi Pai)
+
+ * Start the development of the next major version (Siddhi Pai)
+
+ * Update README.md (#27) (Rand McKinney)
+
+ * Update readme (Amir Jafarian)
+
+ * Add connectorCapabilities global object (#24) (Nicholas Duffy)
+
+
 2016-10-11, Version 1.2.0
 =========================
 
