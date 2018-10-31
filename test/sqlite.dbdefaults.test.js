@@ -17,15 +17,11 @@ describe('database default field values', function() {
     Post = db.define('PostWithDbDefaultValue', {
       created: {
         type: 'Date',
-        sqlite3: {
-          dbDefault: 'now'
-        }
+        default: 'now'
       },
       defaultInt: {
         type: 'Number',
-        sqlite3: {
-          dbDefault: '5'
-        }
+        default: '5'
       },
       oneMore: {
         type: 'Number'
@@ -35,9 +31,7 @@ describe('database default field values', function() {
     db.define('PostWithInvalidDbDefaultValue', {
       created: {
         type: 'Date',
-        sqlite3: {
-          dbDefault: '\'5\''
-        }
+        default: '\'5\''
       }
     });
   });

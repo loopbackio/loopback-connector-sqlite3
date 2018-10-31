@@ -73,9 +73,7 @@ The model definition consists of the following properties:
       "createdOn": {
        "type": "Date",
         "required": false,
-        "sqlite3": {
-          "dbDefault": "now"
-        }
+        "default": "now"
       }
     }}
 
