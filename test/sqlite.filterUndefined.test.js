@@ -15,9 +15,7 @@ describe('filter undefined fields', function() {
 
     Post = db.define('FilterUndefined', {
       defaultInt: {
-        type: 'Number', sqlite3: {
-          dbDefault: '5'
-        }
+        type: 'Number', default: '5'
       }, first: {
         type: 'String'
       }, second: {
