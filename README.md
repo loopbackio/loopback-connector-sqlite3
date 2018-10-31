@@ -73,7 +73,7 @@ The model definition consists of the following properties:
       "createdOn": {
        "type": "Date",
         "required": false,
-        "default": "now"
+        "default": "$now"
       }
     }}
 

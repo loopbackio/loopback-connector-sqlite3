@@ -17,7 +17,7 @@ describe('database default field values', function() {
     Post = db.define('PostWithDbDefaultValue', {
       created: {
         type: 'Date',
-        default: 'now'
+        default: '$now'
       },
       defaultInt: {
         type: 'Number',
