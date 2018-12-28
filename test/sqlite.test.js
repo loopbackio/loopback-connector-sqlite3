@@ -158,6 +158,16 @@ describe('sqlite3 connector', function() {
           done();
         });
     });
+
+  it('should return 0 documents when filtering with non existing field',
+    function(done) {
+      Post.count({nonexistingfield: '__TEST__'},
+        function(err, count) {
+          should.not.exists(err);
+          count.should.equal(0);
+          done();
+        });
+    });
 });
 
 // FIXME: The following test cases are to be reactivated for PostgreSQL
