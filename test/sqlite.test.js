@@ -33,10 +33,8 @@ describe('sqlite3 connector', function() {
   });
 
   it('should run migration', function(done) {
-    db.automigrate('PostWithBoolean', function() {
-      db.automigrate('ModelWithPKString', function() {
-        done();
-      });
+    db.automigrate(['PostWithBoolean', 'ModelWithPKString'], function(err) {
+      done(err);
     });
   });
 
