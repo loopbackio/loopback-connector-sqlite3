@@ -1,0 +1,8 @@
+arch:
+  - arm64
+  - ppc64le
+  - s390x
+language: node_js
+node_js: [10, 12, 14, 16]
+before_install: npm install -g npm
+script: npm test --ignore-scripts
