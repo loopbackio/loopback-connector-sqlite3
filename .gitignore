@@ -1,6 +1,7 @@
 node_modules
 .project
 .idea
+.nyc_output
 coverage
 lib-cov
 *.seed
