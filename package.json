@@ -24,7 +24,7 @@
     "debug": "^2.1.1",
     "loopback-connector": "2.x",
     "moment": "^2.10.3",
-    "sqlite3": "^3.1.0",
+    "sqlite3": "^3.1.13",
     "strong-globalize": "^2.6.2"
   },
   "devDependencies": {
